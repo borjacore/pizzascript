@@ -5,13 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc --p ./tsconfig.json --outDir lib --declaration",
+    "preexecute": "yarn compile",
+    "execute": "node ./lib/index.js",
     "tsrun": "ts-node index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "commander": "^4.1.0",
+    "inquirer": "^7.0.3",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.4"
+  },
+  "devDependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/inquirer": "^6.5.0",
+    "@types/node": "^13.1.6"
   }
 }

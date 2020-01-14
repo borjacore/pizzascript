@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
     "lib": [
       "es6",
       "dom"
     ],
+    "outDir": "./lib",
     "declaration": true,
     "removeComments": false,
     "stripInternal": true,
@@ -14,9 +15,15 @@
     "alwaysStrict": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "typeRoots": [
+      "node_modules/@types",
+      "src/types"
+    ]
   },
-  "files": [
-    "./index.ts"
+  "include": [
+    "./src"
   ]
 }
