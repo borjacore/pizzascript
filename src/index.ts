@@ -34,7 +34,7 @@ Commander
     const answers = await createPizza(toppings)
 
     if (answers) {
-      const pizza = new Pizza({
+      const pizza: Pizza = new Pizza({
         name: answers['Base'] as string,
         toppings: answers['Toppings'] as Topping[],
         size: answers['Size'] as PizzaSizes
