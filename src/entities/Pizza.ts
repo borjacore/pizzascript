@@ -14,6 +14,7 @@ class Pizza {
   }
 
   public printOrder() {
+    console.log(this)
     console.log('Pizza Name: ', this.name)
     console.log('')
     console.log('Selected Toppings:')

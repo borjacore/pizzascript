@@ -2,7 +2,7 @@ import inquirer, { ListQuestion } from 'inquirer'
 import {PizzaBases, Topping, PizzaSizes} from '../types/global'
 // import { PizzaBases } from '../types/global'
 
-const chooseBase = (toppings: Topping[]) => {
+const createPizza = (toppings: Topping[]) => {
   const questions = [
     {
       type: 'list',
@@ -27,4 +27,4 @@ const chooseBase = (toppings: Topping[]) => {
   return inquirer.prompt(questions)
 }
 
-export default chooseBase
+export default createPizza;

@@ -10,8 +10,6 @@
     "declaration": true,
     "removeComments": false,
     "stripInternal": true,
-    // since 2.3
-    // "strict": true,
     "alwaysStrict": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
