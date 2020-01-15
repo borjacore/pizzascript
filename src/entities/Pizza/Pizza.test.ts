@@ -1,14 +1,16 @@
 import Pizza from './Pizza'
-import { toppings } from '../constants'
-import { PizzaBases, PizzaSizes } from '../types/global'
+import { toppings } from '../../constants'
+import { PizzaBases, PizzaSizes, PizzaInfo } from '../../types/global'
 import mockConsole from 'jest-mock-console'
 
+const examplePizza: PizzaInfo = {
+  base: PizzaBases.DeepPan,
+  toppings,
+  size: PizzaSizes.Large
+}
+
 const createPizza = (): Pizza => {
-  return new Pizza({
-    base: PizzaBases.DeepPan,
-    toppings,
-    size: PizzaSizes.Large
-  })
+  return new Pizza(examplePizza)
 }
 
 describe('Pizza', () => {
@@ -18,13 +20,10 @@ describe('Pizza', () => {
     expect(pizza).toBeInstanceOf(Pizza)
   })
 
-  it('When passed correct values should set properties correctly', () => {
+  it('Should contain the correct properties', () => {
     const pizza: Pizza = createPizza()
-
-    expect(pizza.base).toEqual(PizzaBases.DeepPan)
-    expect(pizza.toppings).toEqual(toppings)
-    expect(pizza.size).toEqual(PizzaSizes.Large)
-  }) 
+    expect(pizza).toMatchObject(examplePizza)
+  })
 
   describe('pizza.printOrder', () => {
     it('Should print order to console', () => {

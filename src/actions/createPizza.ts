@@ -21,6 +21,11 @@ const createPizza = (toppings: Topping[]): Promise<Answers> => {
       name: 'Size',
       message: 'Which size pizza would you like?',
       choices: getEnumValues(PizzaSizes)
+    },
+    {
+      type: 'input',
+      name: 'SpecialRequirements',
+      message: 'Do you have any special requirements?'
     }
   ]
 

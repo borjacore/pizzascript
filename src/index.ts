@@ -1,7 +1,7 @@
 import Commander from 'commander'
 import createPizza from './actions/createPizza'
 import { PizzaSizes, PizzaBases, Topping } from './types/global'
-import Pizza from './entities/Pizza'
+import Pizza from './entities/Pizza/Pizza'
 import { toppings } from './constants'
 
 Commander
