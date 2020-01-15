@@ -1,6 +1,6 @@
 import inquirer, {QuestionCollection, Answers} from 'inquirer'
 import { PizzaBases, Topping, PizzaSizes } from '../types/global'
-// import { PizzaBases } from '../types/global'
+import getEnumValues from '../utils/getEnumValues/getEnumValues'
 
 const createPizza = (toppings: Topping[]): Promise<Answers> => {
   const questions: QuestionCollection = [
@@ -8,7 +8,7 @@ const createPizza = (toppings: Topping[]): Promise<Answers> => {
       type: 'list',
       name: 'Base',
       message: 'Which pizza base would you like?',
-      choices: Object.values(PizzaBases).filter((value) => typeof value === 'string')
+      choices: getEnumValues(PizzaBases)
     },
     {
       type: 'checkbox',
@@ -20,7 +20,7 @@ const createPizza = (toppings: Topping[]): Promise<Answers> => {
       type: 'list',
       name: 'Size',
       message: 'Which size pizza would you like?',
-      choices: Object.values(PizzaSizes).filter((value) => typeof value === 'string')
+      choices: getEnumValues(PizzaSizes)
     }
   ]
 

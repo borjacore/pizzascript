@@ -1,6 +1,6 @@
 import Commander from 'commander'
 import createPizza from './actions/createPizza'
-import { PizzaSizes, PizzaBases } from './types/global'
+import { PizzaSizes, PizzaBases, Topping } from './types/global'
 import Pizza from './entities/Pizza'
 import { toppings } from './constants'
 
@@ -11,7 +11,7 @@ Commander
   .action(async () => {
     const answers = await createPizza(toppings)
 
-    const selectedToppings = (selectedToppings: string[]) => {
+    const selectedToppings = (selectedToppings: string[]): Topping[] => {
       const selected = toppings
         .filter(value => selectedToppings.includes(value.description)) 
 

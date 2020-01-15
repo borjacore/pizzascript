@@ -4,7 +4,11 @@ const tsconfig = require("./tsconfig.json");
 module.exports = {
   collectCoverage: false,
   collectCoverageFrom: [
-    "src/entities/*.ts"
+    "src/**/*.ts",
+    "!src/types/**/*.ts",
+    "!src/actions/**/*.ts",
+    "!src/constants.ts",
+    "!src/index.ts"
   ],
   coverageReporters: ["lcov", "json", "cobertura"],
   moduleFileExtensions: ["ts", "js"],
