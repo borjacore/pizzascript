@@ -25,6 +25,7 @@
   "devDependencies": {
     "@types/commander": "^2.12.2",
     "@types/inquirer": "^6.5.0",
-    "@types/node": "^13.1.6"
+    "@types/node": "^13.1.6",
+    "jest-mock-console": "^1.0.0"
   }
 }

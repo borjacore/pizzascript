@@ -1,3 +1,5 @@
+import Pizza from 'src/entities/Pizza'
+
 export type ToppingNames = "Cheese" | "Tomato" | "Ham" | "Bacon"
 
 export interface Topping {
@@ -19,7 +21,7 @@ export enum PizzaBases {
 }
 
 export interface PizzaInfo {
-  name: string
+  base: PizzaBases
   toppings: Topping[]
   size: PizzaSizes
 }

@@ -1,9 +1,9 @@
-import inquirer, { ListQuestion } from 'inquirer'
-import {PizzaBases, Topping, PizzaSizes} from '../types/global'
+import inquirer, {QuestionCollection, Answers} from 'inquirer'
+import { PizzaBases, Topping, PizzaSizes } from '../types/global'
 // import { PizzaBases } from '../types/global'
 
-const createPizza = (toppings: Topping[]) => {
-  const questions = [
+const createPizza = (toppings: Topping[]): Promise<Answers> => {
+  const questions: QuestionCollection = [
     {
       type: 'list',
       name: 'Base',
