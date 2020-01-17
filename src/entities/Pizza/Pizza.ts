@@ -1,16 +1,22 @@
 import { Topping, PizzaSizes, PizzaInfo, PizzaBases } from 'src/types/global'
+import { toppings } from '../../constants'
 
 class Pizza {
-  public base?: PizzaBases
-  public toppings: Topping[] = []
-  public size?: PizzaSizes 
+  private base?: PizzaBases
+  static availableToppings: Topping[] = toppings
+  private selectedToppings: Topping[] = []
+  private size?: PizzaSizes 
 
   constructor (pizza?: PizzaInfo) {
     if (pizza) {
       this.base = pizza.base
-      this.toppings = pizza.toppings
+      this.selectedToppings = pizza.selectedToppings
       this.size = pizza.size
     }
+  }
+
+  static getSelectedToppings(selected: string[]) {
+    return Pizza.availableToppings.filter(value => selected.includes(value.description))
   }
 
   public printOrder() {
@@ -21,7 +27,7 @@ class Pizza {
     console.log(`Base: ${this.base}`)
     console.log('')
     console.log('Toppings:')
-    this.toppings.forEach((topping) => {
+    this.selectedToppings.forEach((topping) => {
       console.log(`- ${topping.description}`)
     })
     console.log('')

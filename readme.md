@@ -6,7 +6,7 @@
 3. Check project runs by executing `yarn execute`
 
 ## Exercises
-1. Create DeliveryAddress enitity in: `./src/entities/DeliveryAddress/DeliveryAddress.ts`
+1. Create DeliveryAddress entity in: `./src/entities/DeliveryAddress/DeliveryAddress.ts`
 2. Create DeliveryInfo interface in global.ts \
 `src/types/global.ts`
 3. Extend Pizza class to hold deliveryAddress with correct type

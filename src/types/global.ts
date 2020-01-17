@@ -22,6 +22,12 @@ export enum PizzaBases {
 
 export interface PizzaInfo {
   base: PizzaBases
-  toppings: Topping[]
+  selectedToppings: Topping[]
   size: PizzaSizes
+}
+
+export interface DeliveryInfo {
+  houseNumber: number
+  streetAddress: string
+  postCode: string
 }
